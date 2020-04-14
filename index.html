@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <title>edX analytics</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <div id='select-course'>
+        <select v-model="selected" @change="newCourseSelected($event)">
+            <option v-for="option in options" v-bind:value="option">
+            {{ option }}
+            </option>
+        </select>
+    </div>
+
+    <div id="tester" style="width:1800px;height:2000px;"></div>
+        
+    <script src="index.js"></script>
+</body>
+</html>
