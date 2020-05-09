@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <title>Video watching analysis</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <p>
+        <a href="index.html">back</a>
+    </p>
+    <h1>Video watching analysis</h1>
+    <div id="select-course">
+        <p>Select course: </p>
+        <select v-model="selected" @change="newCourseSelected($event)">
+            <option v-for="option in options" v-bind:value="option">
+            {{ option }}
+            </option>
+        </select>
+    </div>
+
+    <div id="select-video">
+        <p>Select video: </p>
+        <select v-model="selected" @change="newVideoSelected($event)">
+            <option v-for="option in options" v-bind:value="option">
+            {{ option }}
+            </option>
+        </select>
+    </div>
+
+    <div id="video-watching-plot" style="width:600px;height:600px;"></div>
+
+    <script src="video-watching.js"></script>
+</body>
+</html>
